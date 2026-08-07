@@ -13,6 +13,7 @@
       <div class="navlinks">
         <a href="#ranks">Ranks</a>
         <a href="#keys">Crate Keys</a>
+        <a href="#extras">Extras</a>
         <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
       </div>
     </nav>
@@ -98,8 +99,8 @@
         <article class="card">
           <div class="key-icon common">✦</div>
           <h3>Common Crate Key</h3>
-          <div class="price">$5.00 <span>USD</span></div>
-          <button onclick="addToCart('Common Crate Key', 5.00)">Add to Cart</button>
+          <div class="price">$0.50 <span>USD</span></div>
+          <button onclick="addToCart('Common Crate Key', 0.50)">Add to Cart</button>
         </article>
 
         <article class="card">
@@ -117,6 +118,32 @@
         </article>
       </div>
     </section>
+
+    <section id="extras">
+      <div class="section-head">
+        <p class="eyebrow">SERVER EXTRAS</p>
+        <h2>Extras</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card featured">
+          <span class="badge">ACCOUNT SERVICE</span>
+          <div class="key-icon prime">⚡</div>
+          <h3>Unban</h3>
+          <div class="price">$12.00 <span>USD</span></div>
+          <p>Purchase an unban for an eligible PoloSMP account.</p>
+          <button onclick="addToCart('Unban', 12.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon gold">$</div>
+          <h3>$1,000,000 In-Game Money</h3>
+          <div class="price">$2.00 <span>USD</span></div>
+          <p>Receive $1,000,000 in PoloSMP in-game currency.</p>
+          <button onclick="addToCart('$1,000,000 In-Game Money', 2.00)">Add to Cart</button>
+        </article>
+      </div>
+    </section>
   </main>
 
   <aside id="cartDrawer" class="cart">
@@ -128,7 +155,7 @@
     <div class="cart-footer">
       <div class="total">Total: $<span id="cartTotal">0.00</span> USD</div>
       <button class="checkout" onclick="checkout()">Checkout</button>
-      <p class="small">Connect this button to your Tebex or payment checkout link.</p>
+      <p class="small">Checkout will work after you add your Tebex store or package link in script.js.</p>
     </div>
   </aside>
 
