@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PoloSMP Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <div class="brand">POLOSMP</div>
+      <div class="navlinks">
+        <a href="#ranks">Ranks</a>
+        <a href="#keys">Crate Keys</a>
+        <a href="#extras">Extras</a>
+        <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">OFFICIAL STORE</p>
+      <h1>Upgrade your PoloSMP experience.</h1>
+      <p>Ranks, crate keys, and exclusive server perks.</p>
+      <div class="server-ip">
+        <span>polosmp.mcsh.io</span>
+        <button onclick="copyIP()">Copy IP</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="ranks">
+      <div class="section-head">
+        <p class="eyebrow">PERMANENT UPGRADES</p>
+        <h2>Ranks</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card featured">
+          <span class="badge">TOP RANK</span>
+          <h3>OG Rank</h3>
+          <div class="price">$14.00 <span>USD</span></div>
+          <p>Stand out with the exclusive OG rank and server perks.</p>
+          <button onclick="addToCart('OG Rank', 14.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <h3>Eternal+ Rank</h3>
+          <div class="price">$10.00 <span>USD</span></div>
+          <p>A premium rank for players who want extra status and perks.</p>
+          <button onclick="addToCart('Eternal+ Rank', 10.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <h3>Eternal Rank</h3>
+          <div class="price">$8.00 <span>USD</span></div>
+          <p>Unlock Eternal status and exclusive server benefits.</p>
+          <button onclick="addToCart('Eternal Rank', 8.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <h3>Prestige+ Rank</h3>
+          <div class="price">$6.50 <span>USD</span></div>
+          <p>A stronger Prestige package with upgraded server perks.</p>
+          <button onclick="addToCart('Prestige+ Rank', 6.50)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <h3>Prestige Rank</h3>
+          <div class="price">$5.00 <span>USD</span></div>
+          <p>Start your rank progression with Prestige.</p>
+          <button onclick="addToCart('Prestige Rank', 5.00)">Add to Cart</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="keys">
+      <div class="section-head">
+        <p class="eyebrow">OPEN CRATES IN-GAME</p>
+        <h2>Crate Keys</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="key-icon amethyst">✦</div>
+          <h3>Amethyst Crate Key</h3>
+          <div class="price">$5.00 <span>USD</span></div>
+          <button onclick="addToCart('Amethyst Crate Key', 5.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon gold">✦</div>
+          <h3>Gold Crate Key</h3>
+          <div class="price">$5.00 <span>USD</span></div>
+          <button onclick="addToCart('Gold Crate Key', 5.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon common">✦</div>
+          <h3>Common Crate Key</h3>
+          <div class="price">$0.50 <span>USD</span></div>
+          <button onclick="addToCart('Common Crate Key', 0.50)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon crimson">✦</div>
+          <h3>Crimson Crate Key</h3>
+          <div class="price">$5.00 <span>USD</span></div>
+          <button onclick="addToCart('Crimson Crate Key', 5.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon prime">✦</div>
+          <h3>Prime Crate Key</h3>
+          <div class="price">$5.00 <span>USD</span></div>
+          <button onclick="addToCart('Prime Crate Key', 5.00)">Add to Cart</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="extras">
+      <div class="section-head">
+        <p class="eyebrow">SERVER EXTRAS</p>
+        <h2>Extras</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card featured">
+          <span class="badge">ACCOUNT SERVICE</span>
+          <div class="key-icon prime">⚡</div>
+          <h3>Unban</h3>
+          <div class="price">$12.00 <span>USD</span></div>
+          <p>Purchase an unban for an eligible PoloSMP account.</p>
+          <button onclick="addToCart('Unban', 12.00)">Add to Cart</button>
+        </article>
+
+        <article class="card">
+          <div class="key-icon gold">$</div>
+          <h3>$1,000,000 In-Game Money</h3>
+          <div class="price">$2.00 <span>USD</span></div>
+          <p>Receive $1,000,000 in PoloSMP in-game currency.</p>
+          <button onclick="addToCart('$1,000,000 In-Game Money', 2.00)">Add to Cart</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button onclick="toggleCart()">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="total">Total: $<span id="cartTotal">0.00</span> USD</div>
+      <button class="checkout" onclick="checkout()">Checkout</button>
+      <p class="small">Checkout will work after you add your Tebex store or package link in script.js.</p>
+    </div>
+  </aside>
+
+  <div id="overlay" onclick="toggleCart()"></div>
+
+  <footer>
+    <div>
+      <strong>PoloSMP</strong>
+      <p>Thank you for supporting the server.</p>
+    </div>
+    <p class="small">Minecraft is a trademark of Mojang Studios. PoloSMP is not affiliated with Mojang or Microsoft.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
